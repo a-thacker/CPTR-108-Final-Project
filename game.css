@@ -1,0 +1,183 @@
+body{
+  background-color:rgb(64,47,29);
+  width: 1200px;
+  margin: 0 auto;
+}
+.instructions{
+  text-align: center;
+}
+.flexContainer{
+  display: flex;
+  flex-direction: row;
+  height: 400px;
+}
+.flexContainerLabel{
+  display: flex;
+  flex-direction: row;
+  height:70px;
+}
+.label{/*!! Fix this Section!!*/
+  margin-right:80px;
+  margin-left:50px;
+  border: 3px solid black;
+  flex: 1;
+  text-align:center;
+  border-radius: 15px;
+  background-color: tan;
+  box-shadow:5px inset black; /*!!!!*/
+
+}
+
+.characterBorder{
+  border: 3px solid black;
+  border-radius: 15px;
+  max-height: 400px;
+  max-width: 300px;
+  flex: 1;
+  margin-right:80px;
+  margin-left:50px;
+  background-color: tan;
+  margin-top:10px;
+}
+#characterOne{
+  background-image: url(Wizard-Big.gif);
+  background-size: 300px, 200px;
+}
+
+#characterTwo{
+  background-image: url(Knight.gif);
+  background-size: 300px, 200px;
+}
+
+#score
+{
+    text-align: center;
+}
+
+#gamescore{
+  text-align: center;
+  color: blue;
+}
+#score{
+  background-color:tan;
+  padding:10px; 
+  border: 5px siolid black;
+  border-radius:10px;
+  width: 100px;
+  height:50px;
+}
+
+#game {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    border: 4px solid black;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 10px;
+    padding-bottom: 38px;
+  }
+  
+  #game::before {
+    content: "";
+    background: url(background.gif) repeat-x;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: scroll-bg 20s linear infinite;
+  }
+  
+  @keyframes scroll-bg {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: -4050px 0;
+    }
+  }
+  #ground {
+    position: absolute;
+    bottom: 0;
+    left: 0; 
+    right: 0;
+    /*transform: scaleY(4);*/
+    height: 65px;
+    width: 2400px;
+    background: url(ground.png) repeat-x;
+    animation: scroll-ground 2.5s linear infinite;
+    background-size: contain;
+  }
+  
+  @keyframes scroll-ground {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: -1017px 0;
+    }
+  }
+
+#character
+{
+    height: 75px;
+    width: 75px;
+    position: relative;
+    top: 225px;
+    background-image: url(wizard.gif);
+    background-size: cover;
+}
+
+/*#constantDragon{
+  height: 100px;
+  width: 100px;
+  position: relative;
+  top: 175px;
+  background-image: url(baby-dragon.gif);
+  background-size: cover;
+  top:-130px;
+  display:none;
+  
+}*/
+
+
+#rock
+{
+    height: 50px;
+    width: 50px;
+    position: relative;
+    top: 175px;
+    background-image: url(https://opengameart.org/sites/default/files/Rock%20Pile.png);
+    background-size: cover;
+    left: 550px;
+}/*3.325*/
+
+#rock /*#, constantDragon*/{
+  animation: moveObstacle 3.7s linear;
+}
+
+
+@keyframes moveObstacle 
+{
+0%{left: 20000px;}
+10%{left: 1300px;}
+100%{left:-50px;}
+}
+
+.jump-animation 
+{
+    animation: jump 0.7s;
+    /*ease*/
+}
+
+@keyframes jump 
+{
+    0%{top: 225px;}
+    50%{top: 75px;}
+    /*75%{top: 75px;}*/
+    100%{top: 225px;}
+}
+
+
