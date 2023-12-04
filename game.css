@@ -1,103 +1,142 @@
-body{
+body {
   background-color:rgb(64,47,29);
   width: 1200px;
   margin: 0 auto;
 }
-.instructions{
-  text-align: center;
-}
-.flexContainer{
-  display: flex;
-  flex-direction: row;
-  height: 400px;
-}
-.flexContainerLabel{
-  display: flex;
-  flex-direction: row;
-  height:70px;
-}
-.label{/*!! Fix this Section!!*/
-  margin-right:80px;
-  margin-left:50px;
-  border: 3px solid black;
-  flex: 1;
-  text-align:center;
-  border-radius: 15px;
-  background-color: tan;
-  box-shadow:5px inset black; /*!!!!*/
 
-}
-
-.characterBorder{
-  border: 3px solid black;
-  border-radius: 15px;
-  max-height: 400px;
-  max-width: 300px;
-  flex: 1;
-  margin-right:80px;
-  margin-left:50px;
-  background-color: tan;
-  margin-top:10px;
-}
-#characterOne{
-  background-image: url(Wizard-Big.gif);
-  background-size: 300px, 200px;
-}
-
-#characterTwo{
-  background-image: url(Knight.gif);
-  background-size: 300px, 200px;
-}
-
-#score
-{
+/*Containers and Styling for information and Buttons */
+  .instructions{
     text-align: center;
-}
-
-#gamescore{
-  text-align: center;
-  color: blue;
-}
-#score{
-  background-color:tan;
-  padding:10px; 
-  border: 5px siolid black;
-  border-radius:10px;
-  width: 100px;
-  height:50px;
-}
-
-#game {
-    position: relative;
-    width: 100%;
-    height: 300px;
-    border: 4px solid black;
-    margin: auto;
-    overflow: hidden;
+    background-color: tan;
+    width:100%;
     border-radius: 10px;
-    padding-bottom: 38px;
+    border: 3px solid black;
+    box-shadow: inset 0 0 10px #960200;
   }
-  
+  .flexContainerButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .flexItemButton {
+    flex: 1; 
+    background-color:tan;
+    border: 3px solid black;
+    border-radius:10px;
+    width: 100px;
+    height:50px;
+    text-align: center ;
+  }
+  #goHome {
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: inset 0 0 20px #960200;
+  }
+  #scoreButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: inset 0 0 20px #960200;
+  }
+
+
+/*Containers for Labels and Character boxes on First Page.html*/
+  .flexContainer {
+    display: flex;
+    flex-direction: row;
+    height: 400px;
+    justify-content: space-between;
+  }
+  .flexContainerLabel {
+    display: flex;
+    flex-direction: row;
+    height:70px;
+    justify-content: space-between;
+  }
+  .label {
+    
+    border: 3px solid black;
+    text-align:center;
+    border-radius: 15px;
+    background-color: tan;
+    box-shadow: inset 0 0 10px #960200;
+    flex: 0 1 auto;
+    width: calc(100% / 3);
+    max-width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .characterBorder {
+    border: 3px solid black;
+    border-radius: 15px;
+    max-height: 400px;
+    max-width: 300px;
+    flex: 1;
+    /*margin-right:80px;
+    margin-left:50px;
+    margin-top:10px;*/
+    background-color: tan;
+    box-shadow: inset 0 0 30px #960200;
+  }
+  #characterOne {
+    background-image: url(Wizard-Big.gif);
+    background-size: 300px, 200px;
+    flex: 0 1 auto;
+    width: calc(100% / 3);
+    
+  }
+  #characterTwo {
+    background-image: url(Knight-Big.gif);
+    background-size: 300px, 200px;
+    flex: 0 1 auto;
+    width: calc(100% / 3);
+  }
+  #characterThree {
+    background-image: url(Dark-Knight-Big.gif);
+    background-size: 300px, 200px;
+    flex: 0 1 auto;
+    width: calc(100% / 3);
+  }
+
+
+/*Game Content Div & Background Scrolling Animation*/
+  #game {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      border: 4px solid black;
+      margin: auto;
+      overflow: hidden;
+      border-radius: 10px;
+      padding-bottom: 38px;
+  }
   #game::before {
-    content: "";
-    background: url(background.gif) repeat-x;
-    background-size: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    animation: scroll-bg 20s linear infinite;
+      content: "";
+      background: url(background.gif) repeat-x;
+      background-size: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      animation: scroll-bg 20s linear infinite;
   }
-  
   @keyframes scroll-bg {
-    0% {
-      background-position: 0 0;
-    }
-    100% {
-      background-position: -4050px 0;
-    }
+      0% {
+        background-position: 0 0;
+      }
+      100% {
+        background-position: -4050px 0;
+      }
   }
+
+
+/*Game ground & Ground Scrolling Animation*/
   #ground {
     position: absolute;
     bottom: 0;
@@ -110,7 +149,6 @@ body{
     animation: scroll-ground 2.5s linear infinite;
     background-size: contain;
   }
-  
   @keyframes scroll-ground {
     0% {
       background-position: 0 0;
@@ -120,64 +158,42 @@ body{
     }
   }
 
-#character
-{
-    height: 75px;
-    width: 75px;
-    position: relative;
-    top: 225px;
-    background-image: url(wizard.gif);
-    background-size: cover;
-}
 
-/*#constantDragon{
-  height: 100px;
-  width: 100px;
-  position: relative;
-  top: 175px;
-  background-image: url(baby-dragon.gif);
-  background-size: cover;
-  top:-130px;
-  display:none;
-  
-}*/
-
-
-#rock
-{
-    height: 50px;
-    width: 50px;
-    position: relative;
-    top: 175px;
-    background-image: url(https://opengameart.org/sites/default/files/Rock%20Pile.png);
-    background-size: cover;
-    left: 550px;
-}/*3.325*/
-
-#rock /*#, constantDragon*/{
-  animation: moveObstacle 3.7s linear;
-}
-
-
-@keyframes moveObstacle 
-{
-0%{left: 20000px;}
-10%{left: 1300px;}
-100%{left:-50px;}
-}
-
-.jump-animation 
-{
+/*Character Position & jump Animation*/
+  #character {
+      height: 75px;
+      width: 75px;
+      position: relative;
+      top: 225px;
+      background-image: url(wizard.gif);
+      background-size: cover;
+  }
+  @keyframes jump {
+      0%{top: 225px;}
+      50%{top: 75px;}
+      100%{top: 225px;}
+  }
+  .jump-animation {
     animation: jump 0.7s;
-    /*ease*/
-}
-
-@keyframes jump 
-{
-    0%{top: 225px;}
-    50%{top: 75px;}
-    /*75%{top: 75px;}*/
-    100%{top: 225px;}
+    /*ease?*/
 }
 
 
+/*Obstacle Position and Obstacle Scrolling Animaiton (Obstacle named Rock)*/
+  #rock {
+      height: 50px;
+      width: 50px;
+      position: relative;
+      top: 175px;
+      background-image: url(https://opengameart.org/sites/default/files/Rock%20Pile.png);
+      background-size: cover;
+      left: 550px;
+  }/*3.325*/
+  #rock {
+    animation: moveObstacle 3.7s linear;
+  }
+  @keyframes moveObstacle {
+  0%{left: 50000px;}
+  10%{left: 1300px;}
+  100%{left:-50px;}
+  }

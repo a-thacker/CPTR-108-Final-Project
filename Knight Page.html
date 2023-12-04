@@ -6,18 +6,30 @@
   <link href="game.css" rel="stylesheet">
 </head>
   <body>
+    <style>
+      body { 
+        background: url('web background.jpg');
+        background-size: cover;
+      }
+    </style>
     <div id="game">
       <div id="ground"></div>
-      <div id="character" style="background-image: url('https://pngimg.com/d/michael_jackson_PNG39.png');"></div>
+      <div id="character" style="background-image: url('knight.gif');"></div>
       <div id="rock"></div>
       <div id="constantDragon"></div>
-      <div id="gamescore"><p>"Your Score: "</p></div>
     </div>
-    <div id="information"> <!--Information bellow the game: score and home button-->
-      <div><h1 id="score">0</h1></div>
-      <div><button id="goHome">Home</button></div>
-      <div><button id="playAgain">Play Again</button></div>
+    <div class="flexContainerButton"> <!--Information bellow the game: score and home button-->
+      <div id="goHome" class="flexItemButton"><p><strong>Home</strong></p></div>
+      <div id="scoreButton" class="flexItemButton"><h1 id="score">0</h1></div>
     </div>
+    <div id="words"><strong>Press space to jump!</strong></div>
+      <style>
+          #words{
+            font-size: 50px;
+            text-align: center;
+            margin-top: 30px;
+          }
+      </style>
     <script src="game.js"></script>
   </body>
 </html>
