@@ -16,6 +16,11 @@
         jump();
     });
 
+    // Touch event listener
+    document.addEventListener("touchstart", () => {
+        jump();
+    });
+
 /*Define Collision Function / Display End of Game Alert*/
     setInterval(() => {
         score.innerText++;
